@@ -3,29 +3,135 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Tanaman Jahe - Kebun Sikalang</title>
-  <link rel="stylesheet" href="style.css">
+  <title>Taman Digital Desa Sikalang</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      background-color: #f2f4f6;
+      margin: 0;
+      padding: 0;
+    }
+
+    .container {
+      max-width: 700px;
+      margin: 40px auto;
+      background: white;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.08);
+    }
+
+    h1 {
+      text-align: center;
+      color: #2e7d32;
+      font-size: 2em;
+      margin-bottom: 5px;
+    }
+
+    .subinfo {
+      text-align: center;
+      font-size: 0.95em;
+      color: #777;
+      margin-bottom: 20px;
+    }
+
+    .galeri-button {
+      display: flex;
+      justify-content: flex-end;
+      margin-bottom: 20px;
+    }
+
+    .galeri-button a {
+      background-color: #2e7d32;
+      color: white;
+      padding: 10px 18px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .galeri-button a:hover {
+      background-color: #1b5e20;
+    }
+
+    #searchInput {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      margin-bottom: 20px;
+      font-size: 1em;
+    }
+
+    ul#tanamanList {
+      list-style: none;
+      padding: 0;
+    }
+
+    ul#tanamanList li {
+      margin-bottom: 10px;
+    }
+
+    ul#tanamanList a {
+      display: block;
+      background: #e8f5e9;
+      padding: 12px;
+      border-radius: 8px;
+      color: #1b5e20;
+      text-decoration: none;
+      font-weight: bold;
+      transition: 0.2s;
+    }
+
+    ul#tanamanList a:hover {
+      background-color: #c8e6c9;
+    }
+
+    footer {
+      text-align: center;
+      margin-top: 30px;
+      color: #999;
+      font-size: 0.9em;
+    }
+  </style>
 </head>
 <body>
-  <div class="container">
-    <h1>Tanaman Jahe (Zingiber officinale)</h1>
-    <img src="img/Jahe.png" alt="Tanaman Jahe">
-    <h2>Jenis:</h2>
-    <p>Rempah dan Tanaman Obat</p>
 
-    <h2>Manfaat:</h2>
-    <ul>
-      <li>Menghangatkan tubuh</li>
-      <li>Mengobati masuk angin</li>
-      <li>Bumbu masakan tradisional</li>
+  <div class="container">
+    <h1>Taman Digital Desa Sikalang</h1>
+    <div class="subinfo">Kebun Edukasi PKK - KKN UNP 2025</div>
+
+    <div class="galeri-button">
+      <a href="kebun.html">Galeri Kebun</a>
+    </div>
+
+    <input type="text" id="searchInput" placeholder="Cari nama tanaman...">
+
+    <ul id="tanamanList">
+      <li><a href="jahe.html">Tanaman Jahe</a></li>
+      <li><a href="kunyit.html">Tanaman Kunyit</a></li>
+      <li><a href="kunyit-merah.html">Tanaman Kunyit Merah</a></li>
+      <li><a href="sereh.html">Tanaman Sereh</a></li>
+      <!-- Tambahkan lainnya -->
     </ul>
 
-    <h2>Cara Menanam:</h2>
-    <p>Gunakan rimpang tua, tanam di tanah gembur dan lembap. Simpan di tempat teduh, siram teratur.</p>
-    
     <footer>
-      <p>Kebun Edukasi PKK Desa Sikalang - 2025</p>
+      &copy; 2025 - Taman Digital Desa Sikalang
     </footer>
   </div>
+
+  <script>
+    const input = document.getElementById("searchInput");
+    const list = document.getElementById("tanamanList").getElementsByTagName("li");
+
+    input.addEventListener("keyup", function() {
+      const filter = input.value.toLowerCase();
+      for (let i = 0; i < list.length; i++) {
+        const text = list[i].textContent.toLowerCase();
+        list[i].style.display = text.includes(filter) ? "" : "none";
+      }
+    });
+  </script>
+
 </body>
 </html>
