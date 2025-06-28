@@ -24,6 +24,11 @@ h1, h2 {
   color: #2b6727;
 }
 
+p {
+  text-align: justify;
+}
+
+
 footer {
   margin-top: 20px;
   font-size: 0.9em;
